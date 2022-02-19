@@ -17,39 +17,74 @@ export default class Posts extends React.Component {
                         posts : [ ...newArr ]
                     }
                 )
+            } ,
+            editTitle ( ev ) {
+                const idElement = ev.target.closest ( 'tr' ).id ;
+                const index = this.state.posts.findIndex ( post => `${post.userId}-${post.id}` === idElement ) ;
+                this.setState ( prevState => {
+                    return {
+                        posts : prevState.posts.map ( ( post , ndx , arr ) => {
+                            if ( ndx === index ) {
+                                return {
+                                    userId : post.userId ,
+                                    id : post.id ,
+                                    title : ev.target.value ,
+                                    body : post.body
+                                }
+                            }
+                            else {
+                                return post ;
+                            }
+                        } )
+                    }
+                }
+                )
             }
         }
+        this.state.deletePost = this.state.deletePost.bind ( this ) ;
+        this.state.editTitle = this.state.editTitle.bind ( this ) ;
 
         this.styleTable = {
             width : '1000px' ,
         }
-        
-        this.state.deletePost = this.state.deletePost.bind ( this ) ;
     }
 
     render () {
         return (
-            <>
-                <table style={this.styleTable}>
-                    <tbody>
-                        <tr key='userId-id'>
-                            <td>userId</td>
-                            <td>id</td>
-                            <td>title</td>
-                            <td>body</td>
-                        </tr>
-                        <Post { ...this.state }/>
-                    </tbody>
-                </table>
-            </>
+            <table style={this.styleTable}>
+                <tbody>
+                    <tr key='userId-id'>
+                        <td>userId</td>
+                        <td>id</td>
+                        <td>title</td>
+                        <td>body</td>
+                    </tr>
+                    <Post { ...this.state }/>
+                </tbody>
+            </table>
         )
     }
 
     componentDidMount () {
         fetch ( 'https://jsonplaceholder.typicode.com/posts' )
-            .then ( responce => responce.json() )
+            .then ( response => {
+                if ( response.ok ) {
+                    if ( response.headers.get ( 'Content-Type' ) === 'application/json; charset=utf-8' ) {
+                        return response.json() ;
+                    }
+                    else {
+                        throw new Error ( 'response not JSON-format' )
+                    }
+                }
+                else {
+                    throw new Error ( 'error url' )
+                }
+            }  )
             .then ( json => {
                 this.setState ( { posts : Array.from ( json ) } ) ;
+            } )
+            .catch ( err => { 
+                this.setState ( { posts : String ( err ) } ) ;
             } )
     }
 }
