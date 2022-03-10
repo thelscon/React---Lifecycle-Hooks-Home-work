@@ -1,8 +1,11 @@
 import React from "react";
 
-import Post from "./Post/Post";
+import Title from "./Title/Title.js";
+import Posts from "./Posts/Posts.js";
 
-export default class Posts extends React.Component {
+import './PostsTable.css' ;
+
+export default class PostTable extends React.Component {
     constructor ( props ) {
         super ( props ) ;
 
@@ -43,24 +46,13 @@ export default class Posts extends React.Component {
         }
         this.state.deletePost = this.state.deletePost.bind ( this ) ;
         this.state.editTitle = this.state.editTitle.bind ( this ) ;
-
-        this.styleTable = {
-            width : '1000px' ,
-        }
     }
 
     render () {
         return (
-            <table style={this.styleTable}>
-                <tbody>
-                    <tr key='userId-id'>
-                        <td>userId</td>
-                        <td>id</td>
-                        <td>title</td>
-                        <td>body</td>
-                    </tr>
-                    <Post { ...this.state }/>
-                </tbody>
+            <table className="post-table">
+                <Title />
+                <Posts { ...this.state } />
             </table>
         )
     }
@@ -69,7 +61,7 @@ export default class Posts extends React.Component {
         fetch ( 'https://jsonplaceholder.typicode.com/posts' )
             .then ( response => {
                 if ( response.ok ) {
-                    if ( response.headers.get ( 'Content-Type' ) === 'application/json; charset=utf-8' ) {
+                    if ( response.headers.get ( 'content-type' ) === 'application/json; charset=utf-8' ) {
                         return response.json() ;
                     }
                     else {

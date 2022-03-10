@@ -1,0 +1,24 @@
+.post__item__title:hover {
+    background-color: #F4F5F4;
+}
+
+.post__item__title::selection {
+    background-color: #373F41;
+    color: #FFFFFF;
+}
+
+.post__item__title {
+    font-family: 'Mulish';
+    font-weight: 400;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #737B7D;
+
+    border: 0;
+    overflow: hidden;
+    resize: none;
+    outline: none;
+    color: #737B7D;
+}

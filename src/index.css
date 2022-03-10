@@ -1,13 +1,73 @@
+@font-face {
+  font-family: 'Mulish';
+  src: url('./fonts/Mulish/400/normal/Mulish-Regular.eot');
+  src: url('./fonts/Mulish/400/normal/Mulish-Regular.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/Mulish/400/normal/Mulish-Regular.woff2') format('woff2'),
+      url('./fonts/Mulish/400/normal/Mulish-Regular.woff') format('woff'),
+      url('./fonts/Mulish/400/normal/Mulish-Regular.ttf') format('truetype'),
+      url('./fonts/Mulish/400/normal/Mulish-Regular.svg#Mulish-SemiBold') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('./fonts/Mulish/400/italic/Mulish-Italic.eot');
+  src: url('./fonts/Mulish/400/italic/Mulish-Italic.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/Mulish/400/italic/Mulish-Italic.woff2') format('woff2'),
+      url('./fonts/Mulish/400/italic/Mulish-Italic.woff') format('woff'),
+      url('./fonts/Mulish/400/italic/Mulish-Italic.ttf') format('truetype'),
+      url('./fonts/Mulish/400/italic/Mulish-Italic.svg#Mulish-Italic') format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('./fonts/Mulish/600/Mulish-SemiBold.eot');
+  src: url('./fonts/Mulish/600/Mulish-SemiBold.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/Mulish/600/Mulish-SemiBold.woff2') format('woff2'),
+      url('./fonts/Mulish/600/Mulish-SemiBold.woff') format('woff'),
+      url('./fonts/Mulish/600/Mulish-SemiBold.ttf') format('truetype'),
+      url('./fonts/Mulish/600/Mulish-SemiBold.svg#Mulish-SemiBold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('./fonts/Mulish/700/Mulish-Bold.eot');
+  src: url('./fonts/Mulish/700/Mulish-Bold.eot?#iefix') format('embedded-opentype'),
+      url('./fonts/Mulish/700/Mulish-Bold.woff2') format('woff2'),
+      url('./fonts/Mulish/700/Mulish-Bold.woff') format('woff'),
+      url('./fonts/Mulish/700/Mulish-Bold.ttf') format('truetype'),
+      url('./fonts/Mulish/700/Mulish-Bold.svg#Mulish-Bold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  display: grid;
+  justify-items: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.post-table {
+  margin: 10px 100px;
+  border-collapse: separate;
+  border-spacing: 10px 38px;
 }

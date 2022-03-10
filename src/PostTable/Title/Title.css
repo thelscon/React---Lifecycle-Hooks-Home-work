@@ -1,0 +1,16 @@
+.header {
+    font-family: 'Mulish';
+    font-weight: 600;
+    line-height: 18px;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    text-align: left;
+}
+
+.header__item {
+    border-bottom: 1px solid black;
+}
+
+.header__item-action {
+    text-align: center;
+}

@@ -1,0 +1,11 @@
+.post {
+    font-family: 'Mulish';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #737B7D;
+    text-align: left;
+    vertical-align: middle;
+    cursor: default;
+}

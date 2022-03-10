@@ -2,15 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import Posts from './Posts/Posts.js'
+import PostTable from './PostTable/PostTable.js'
 
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(  
   <React.StrictMode>
-    <Posts />
+    <PostTable />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.body
 )
 
 // If you want to start measuring performance in your app, pass a function
