@@ -3,5 +3,6 @@
     min-width: 320px;
     max-width: 1024px;
     border-collapse: separate;
-    border-spacing: 10px 38px;
+    border-spacing: 10px 38px;   
+    border: 1px solid #F4F5F4;
 }

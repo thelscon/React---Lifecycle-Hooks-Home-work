@@ -65,11 +65,11 @@ export default class PostTable extends React.Component {
                         return response.json() ;
                     }
                     else {
-                        throw new Error ( 'response not JSON-format' )
+                        throw new Error ( 'not JSON-format' )
                     }
                 }
                 else {
-                    throw new Error ( 'error url' )
+                    throw new Error ( response.status )
                 }
             }  )
             .then ( json => {

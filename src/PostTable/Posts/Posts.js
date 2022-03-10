@@ -7,7 +7,8 @@ import './Posts.css' ;
 export default class Posts extends React.Component {
 
     render () {
-        const renderArray = this.props.posts.map ( post => {
+        const renderArray = Array.isArray ( this.props.posts )
+        ? this.props.posts.map ( post => {
             return (
                 <tr id={`${post.userId}-${post.id}`} key={`${post.userId}-${post.id}`}>
                     <td className="post">{post.userId}</td>
@@ -22,6 +23,7 @@ export default class Posts extends React.Component {
                 </tr>
             )
         } )
+        : ( `${ this.props.posts }` ) ;
 
         return (
             <tbody>
