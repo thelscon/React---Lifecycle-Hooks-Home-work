@@ -23,7 +23,9 @@ export default class Posts extends React.Component {
                 </tr>
             )
         } )
-        : ( `${ this.props.posts }` ) ;
+        : ( 
+            <tr><td colSpan={5} >{ this.props.posts }</td></tr>
+        ) ;
 
         return (
             <tbody>
