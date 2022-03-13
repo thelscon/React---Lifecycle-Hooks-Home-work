@@ -8,6 +8,8 @@
 }
 
 .post__item__title {
+    width: 191px;
+    height: 40px;
     font-family: 'Mulish';
     font-weight: 400;
     font-size: 14px;
@@ -21,4 +23,8 @@
     resize: none;
     outline: none;
     color: #737B7D;
+}
+
+.post__item__title:hover {
+    overflow: auto;
 }

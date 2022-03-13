@@ -6,7 +6,7 @@ export default class PostTitle extends React.Component {
     render () {
         return (
             <>
-                <textarea 
+                <textarea
                     className="post__item__title" 
                     onInput={this.props.onInputHandler} 
                     value={this.props.post} />
